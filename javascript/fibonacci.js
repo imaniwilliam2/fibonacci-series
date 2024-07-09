@@ -1,9 +1,26 @@
 function fibonacci(num) {
-  // type your code here
+  if (num === 0) {
+    return 0;
+  }
+
+  if (num === 1) {
+    return 1;
+  }
+
+  let a = 0;
+  let b = 1;
+
+  for (let i = 2; i <= num; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+
+  return b;
 }
 
+// Tests
 if (require.main === module) {
-  // add your own tests in here
   console.log("Expecting: 0");
   console.log("=>", fibonacci(0));
 
@@ -19,6 +36,3 @@ if (require.main === module) {
 }
 
 module.exports = fibonacci;
-
-// Please add your pseudocode to this file
-// And a written explanation of your solution
